@@ -1,0 +1,192 @@
+<mvc:View
+    controllerName="misp.maruti.controller.PartMaster.Upload"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:svm="sap.ui.comp.smartvariants"
+    xmlns:u="sap.ui.unified"
+>
+    <!-- <Page
+        title="Upload B Section Sheets"
+        titleAlignment="Center"
+    > -->
+        <f:DynamicPage
+            headerExpanded="true"
+            showFooter="true"
+        >
+        <f:title>
+<f:DynamicPageTitle>
+<f:heading>
+<Title text="Upload B Section Sheets"/>
+</f:heading>
+</f:DynamicPageTitle>
+</f:title>
+        
+            <f:header>
+                <f:DynamicPageHeader>
+                    <f:content>
+                        <fb:FilterBar
+                            id="filterbar"
+                            persistencyKey="myPersKey"
+                            useToolbar="false"
+                            search=".onSearch"
+                            filterChange=".onFilterChange"
+                            afterVariantLoad=".onAfterVariantLoad"
+                        >
+                            <fb:filterGroupItems>
+                                <fb:FilterGroupItem
+                                    name="Request_Number"
+                                    label="Request Number"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                        <Input />
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+
+                                <fb:FilterGroupItem
+                                    name="Control_No"
+                                    label="Control Number"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                        <Input />
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+                                <fb:FilterGroupItem
+                                    name="Type_"
+                                    label="Type"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                        <Input />
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+                            </fb:filterGroupItems>
+                        </fb:FilterBar>
+                    </f:content>
+                </f:DynamicPageHeader>
+            </f:header>
+            <f:content>
+            
+                <VBox alignContent="Center"  backgroundDesign="Solid" justifyContent="Center"  >
+                    <form:SimpleForm editable="true" adjustLabelSpan="true" ariaLabelledBy="200px">
+                        <form:content>
+                            <Label
+                                text="1. Ballooning"
+                                required="true"
+                            
+                            />
+                            <HBox >
+                            <u:FileUploader
+                                name="myFileUpload"
+                                uploadUrl="upload/"
+                                tooltip="Upload your file to the local server"
+                                uploadComplete="handleUploadComplete"
+                            />
+                            <Select ></Select>
+                            </HBox>
+                            <Label
+                                text="2. BOM"
+                                required="true"
+                              
+                            />
+                             <HBox >
+                            <u:FileUploader
+                                name="myFileUpload"
+                                uploadUrl="upload/"
+                                tooltip="Upload your file to the local server"
+                                uploadComplete="handleUploadComplete"
+                            />
+                            <Select ></Select>
+                            </HBox>
+                            <Label
+                                text="3. Regulatory"
+                                textAlign="End"
+                            />
+                            <HBox >
+                            <u:FileUploader
+                                name="myFileUpload"
+                                uploadUrl="upload/"
+                                tooltip="Upload your file to the local server"
+                                uploadComplete="handleUploadComplete"
+                            />
+                            <Select ></Select>
+                            </HBox>
+                            <Label
+                                text="4. Tracebility"
+                                required="true"
+                                textAlign="End"
+                            />
+                           <HBox >
+                            <u:FileUploader
+                                name="myFileUpload"
+                                uploadUrl="upload/"
+                                tooltip="Upload your file to the local server"
+                                uploadComplete="handleUploadComplete"
+                            />
+                            <Select ></Select>
+                            </HBox>
+                            <Label
+                                text="5. Additional annexures"
+                                required="false"
+                                textAlign="End"
+                            />
+                          <HBox >
+                            <u:FileUploader
+                                name="myFileUpload"
+                                uploadUrl="upload/"
+                                tooltip="Upload your file to the local server"
+                                uploadComplete="handleUploadComplete"
+                            />
+                            <Select ></Select>
+                            </HBox>
+                        </form:content>
+                    </form:SimpleForm>
+                </VBox>
+            </f:content>
+            <!-- DynamicPage Footer -->
+            <f:footer>
+                <OverflowToolbar>
+                    <Button
+                        icon="sap-icon://message-popup"
+                        text="{/messagesLength}"
+                        type="Emphasized"
+                        press="onMessageButtonPress"
+                        visible="{= !!${/messagesLength}}"
+                    />
+                    <ToolbarSpacer />
+                    <Button
+                        type="Default"
+                        text="Inquiry"
+                    />
+                    <Button
+                        type="Default"
+                        text="Save As draft"
+                    />
+                    <Button
+                        type="Default"
+                        text="Save"
+                    />
+                    <Button
+                        type="Default"
+                        text="Add"
+                    />
+                    <Button
+                        type="Default"
+                        text="Download"
+                    />
+                </OverflowToolbar>
+            </f:footer>
+        </f:DynamicPage>
+    <!-- </Page> -->
+</mvc:View>

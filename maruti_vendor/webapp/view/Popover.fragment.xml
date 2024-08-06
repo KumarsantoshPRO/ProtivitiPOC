@@ -1,0 +1,42 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core">
+	<Popover
+		id="myPopover1"
+		title="List of symbols"
+		class="sapUiResponsivePadding--header sapUiResponsivePadding--footer"
+		placement="Left"
+		initialFocus="idBtn">
+        <VBox >
+            <HBox >
+                <Button class="sapUiTinyMarginBeginEnd" id="idBtn" text="©" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="®" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="|" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="Ⓜ" type="Attention" press="onButtonPress"/>
+            </HBox>
+            <HBox >
+                <Button class="sapUiTinyMarginBeginEnd"  text="⏤" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="⎷" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="○" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="⌭" type="Attention" press="onButtonPress"/>
+            </HBox>
+             <HBox >
+                <Button class="sapUiTinyMarginBeginEnd" text="⏥" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="∠" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="⊥" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="∥" type="Attention" press="onButtonPress"/>
+            </HBox>
+             <HBox >
+                <Button class="sapUiTinyMarginBeginEnd" text="∘" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="◎" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="⌯" type="Attention" press="onButtonPress"/>
+                <Button  class="sapUiTinyMarginEnd" text="∥" type="Attention" press="onButtonPress"/>
+            </HBox>
+            <HBox >
+                <Button class="sapUiTinyMarginBeginEnd"  text="↗" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="↖" type="Attention" press="onButtonPress"/>
+             
+            </HBox>
+        </VBox>
+	</Popover>
+</core:FragmentDefinition>

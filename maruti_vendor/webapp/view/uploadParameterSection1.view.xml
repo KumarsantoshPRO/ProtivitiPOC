@@ -1,0 +1,273 @@
+<mvc:View
+    controllerName="misp.maruti.controller.PartMaster.Upload"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:svm="sap.ui.comp.smartvariants"
+>
+    <!-- <Page title="Upload Parameter - A Sheet" titleAlignment="Center"> -->
+        <f:DynamicPage headerExpanded="true" fitContent="true" showFooter="true" >
+            <f:title>
+<f:DynamicPageTitle>
+<f:heading>
+<Title text="Upload Parameter - A Sheet"/>
+</f:heading>
+</f:DynamicPageTitle>
+</f:title>
+            <f:header>
+                <f:DynamicPageHeader>
+                    <f:content>
+                        <fb:FilterBar
+                            id="filterbar"
+                            persistencyKey="myPersKey"
+                            useToolbar="false"
+                            search=".onSearch"
+                            filterChange=".onFilterChange"
+                            afterVariantLoad=".onAfterVariantLoad"
+                        >
+                            <fb:filterGroupItems>
+                                <fb:FilterGroupItem
+                                    name="Request_Number"
+                                    label="Request Number"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                     <ComboBox>
+                                    <items>
+                                        <core:Item key="A" text="MSTR0000001" />
+                                        <core:Item key="B" text="MSTR0000007" />
+                                        <core:Item key="C" text="MSTR0000023" />
+                                    </items>                                           
+                                    </ComboBox>
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+
+                                <fb:FilterGroupItem
+                                    name="Control_No"
+                                    label="Control Number"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                        <ComboBox>
+                                    <items>
+                                        <core:Item key="A" text="MISP00001" />
+                                        <core:Item key="B" text="MISP00027" />
+                                        <core:Item key="C" text="MISP00028" />
+                                    </items>                                           
+                                    </ComboBox>
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+   <fb:FilterGroupItem
+                                    name="Type_"
+                                    label="Type"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                       <ComboBox>
+                                    <items>
+                                        <core:Item key="A" text="A" />
+                                        <core:Item key="B" text="B" />
+                                        <core:Item key="C" text="C" />
+                                    </items>                                           
+                                    </ComboBox>
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+                                
+                           
+
+                            
+                            
+                                
+                            </fb:filterGroupItems>
+                        </fb:FilterBar>
+                    </f:content>
+                </f:DynamicPageHeader>
+            </f:header>
+            <f:content>
+                <ScrollContainer
+                    width="100%"
+                    vertical="true"
+                    focusable="true"
+                >
+                    <Table
+                        width="100%"
+                        items="{bAvailData>/}"
+                        mode="MultiSelect"
+                    >
+                    <headerToolbar>
+                        <OverflowToolbar
+                            asyncMode="false"
+                        >
+                        <ToolbarSpacer
+                           
+                        >
+                            
+                        </ToolbarSpacer>
+                            <Button press="handlePopoverPress" text="Show symbols"></Button>
+                        </OverflowToolbar>
+                    </headerToolbar>
+                        <columns>
+                            <!-- <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Select Parameters" />
+                            </Column> -->
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Section" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="DrInspection Item" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Criteria" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Lower Value" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Upper Value" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Inspection Method" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Inspection Tool" />
+                            </Column>
+                             <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Plan" />
+                            </Column>
+                               <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Stage" />
+                            </Column>
+                             <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Select Application Part no" />
+                            </Column>
+                            
+                        </columns>
+                        <items>
+                            <ColumnListItem vAlign="Middle">
+                                <cells>
+                                    <Input value="{bAvailData>section}" />
+                                    <Input value="{bAvailData>InspectionItem}" />
+                                  
+                                    <!-- <ComboBox
+                                        selectedKey="{bAvailData>Part Category}"
+                                    >
+                                        <items>
+                                            <core:Item
+                                                key="A"
+                                                text="Engine Components"
+                                            />
+                                            <core:Item
+                                                key="B"
+                                                text="Transmission Components"
+                                            />
+                                            <core:Item
+                                                key="C"
+                                                text="Electrical Components"
+                                            />
+                                        </items>
+                                    </ComboBox> -->
+                                    <HBox >
+                                    <Input liveChange="onCriteriaChange" value="{bAvailData>Criteria}" />
+                                    <Button id="myPopover" visible="false" press="handlePopoverPress" text="⊥⌭" type="Transparent"></Button>
+                                    </HBox>
+                                    <!-- <ComboBox
+                                        selectedKey="{excelData>Part Family}"
+                                    >
+                                        <items>
+                                            <core:Item
+                                                key="A"
+                                                text="Engine Components"
+                                            />
+                                            <core:Item
+                                                key="B"
+                                                text="Transmission Components"
+                                            />
+                                            <core:Item
+                                                key="C"
+                                                text="Electrical Components"
+                                            />
+                                        </items>
+                                    </ComboBox> -->
+                                    <Input value="{bAvailData>LowerValue}" />
+                                    <Input value="{bAvailData>UpperValue}" />
+                                    <Input value="{bAvailData>InspectionMethod}" />
+                                    <Input value="{bAvailData>InspectionTool}" />
+                                    <Input value="{bAvailData>Plan}" />
+                                    <Input value="{bAvailData>SelectionApplicationPartno}" />
+                                   
+                                    <MultiComboBox>
+                                    <items>
+                                        <core:Item key="A" text="51480-80T00" />
+                                        <core:Item key="B" text="51440-80T00" />
+                                        <core:Item key="C" text="51430-80T00" />
+                                        <core:Item key="D" text="51430-80T10" />
+
+                                    </items>                                           
+                                    </MultiComboBox>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </ScrollContainer>
+            </f:content>
+            	<!-- DynamicPage Footer -->
+			<f:footer>
+				<OverflowToolbar>
+					<Button icon="sap-icon://message-popup"
+							text="{/messagesLength}"
+							type="Emphasized"
+							press="onMessageButtonPress"
+							visible="{= !!${/messagesLength}}"/>
+					<ToolbarSpacer/>
+					<Button type="Default" text="Inquiry"/>
+					<Button type="Default" text="Save As draft"/>
+                    <Button type="Default" text="Save"  />
+                    <Button type="Default" text="Add"/>
+                     <Button type="Default" text="Download"/>
+				</OverflowToolbar>
+			</f:footer>
+        </f:DynamicPage>
+    <!-- </Page> -->
+</mvc:View>

@@ -1,0 +1,224 @@
+<mvc:View
+    controllerName="misp.maruti.controller.PartMaster.View"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+    xmlns:form="sap.ui.layout.form"
+     xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:svm="sap.ui.comp.smartvariants"
+>
+     <f:DynamicPage headerExpanded="{/headerExpanded}" showFooter="true" >
+           <f:title>
+<f:DynamicPageTitle>
+<f:heading>
+<Title text="Vendor: View MIS-P Screen"/>
+</f:heading>
+</f:DynamicPageTitle>
+</f:title> 
+            <f:header>
+                <f:DynamicPageHeader>
+                    <f:content>
+                        <fb:FilterBar
+                            id="filterbar"
+                            persistencyKey="myPersKey"
+                            useToolbar="false"
+                            search=".onSearch"
+                            filterChange=".onFilterChange"
+                            afterVariantLoad=".onAfterVariantLoad"
+                        >
+                            <fb:filterGroupItems>
+                                <fb:FilterGroupItem
+                                    name="Part Family"
+                                    label="Part Family"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                      <Input ></Input>
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+
+                                <fb:FilterGroupItem
+                                    name="User id - name"
+                                    label="User id - name"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                       <Input showValueHelp="true"></Input>
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+
+                                
+                                <fb:FilterGroupItem
+                                    name="Part Category"
+                                    label="Part Category"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                 <Select />
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+
+                                <fb:FilterGroupItem
+                                    name="Part Code - Name"
+                                    label="Part Code - Name"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                     <Select />
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+
+                                 <fb:FilterGroupItem
+                                    name="Control no."
+                                    label="Control no."
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                     <Select />
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+
+                                 <fb:FilterGroupItem
+                                    name="MIS-P status"
+                                    label="MIS-P status"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                      <MultiComboBox>
+                                    <items>
+                                        <core:Item key="A" text="ALL" />
+                                        <core:Item key="B" text="Approved" />
+                                        <core:Item key="C" text="Saved" />
+                                        <core:Item key="D" text="Submitted for review" />
+
+                                    </items>                                           
+                                    </MultiComboBox>
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+
+                                 <fb:FilterGroupItem
+                                    name="Request no"
+                                    label="Request no"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                     <Select />
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+                            
+                                
+                            </fb:filterGroupItems>
+                        </fb:FilterBar>
+                    </f:content>
+                </f:DynamicPageHeader>
+            </f:header>
+            <f:content>
+                <ScrollContainer
+                    width="100%"
+                    vertical="true"
+                    focusable="true"
+                >
+                    <Table
+                        width="100%"
+                        items="{excelData>/}"
+                        mode="MultiSelect"
+                    >
+                        <columns>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Request no" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Control no" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="User name" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Part Number" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Part Name" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Rev no." />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Model" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="MIS-P Status" />
+                            </Column>
+
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="View MIS-P" />
+                            </Column>
+                            
+                        </columns>
+                        <items>
+                            <ColumnListItem vAlign="Middle">
+                                <cells>
+                                    <Input value="{excelData>RequestId}" />
+                                    <Input value="{excelData>Controlno}" />
+                                    <Input value="{excelData>username}" />
+                                    <Input value="{excelData>PartNo}" />
+                                    <Input value="{excelData>PartName}" />
+                                    <Input value="{excelData>RevNo}" />
+                                    <Input value="{excelData>Model}" />
+                                    <Input value="{excelData>MISPStatus}" />
+                                    <Button icon="sap-icon://document"/>
+                                   
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </ScrollContainer>
+            </f:content>
+            	
+			<f:footer>
+				<OverflowToolbar>
+					
+					<ToolbarSpacer/>
+					<Button type="Default" text="Inquiry"/>
+					<Button type="Default" text="Download"/>
+				</OverflowToolbar>
+			</f:footer>
+        </f:DynamicPage>
+</mvc:View>

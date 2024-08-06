@@ -1,0 +1,208 @@
+<mvc:View
+    controllerName="misp.maruti.controller.PartMaster.Upload"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:f="sap.f"
+    xmlns:fb="sap.ui.comp.filterbar"
+    xmlns:svm="sap.ui.comp.smartvariants"
+    xmlns:tnt="sap.tnt"
+>
+    <f:DynamicPage
+            headerExpanded="true"
+            showFooter="true"
+        >
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="Upload Parameters"/>
+                </f:heading>
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:header>
+            <f:DynamicPageHeader>
+                <f:content>
+                    <fb:FilterBar
+                            id="filterbar"
+                            persistencyKey="myPersKey"
+                            useToolbar="false"
+                            search=".onSearch"
+                            filterChange=".onFilterChange"
+                            afterVariantLoad=".onAfterVariantLoad"
+                        >
+                            <fb:filterGroupItems>
+                                <fb:FilterGroupItem
+                                    name="Request_Number"
+                                    label="Request Number"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                        <Input />
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+
+                                <fb:FilterGroupItem
+                                    name="Control_No"
+                                    label="Control Number"
+                                    groupName="Group1"
+                                    visibleInFilterBar="true"
+                                >
+                                    <fb:control>
+                                        <Input />
+                                    </fb:control>
+                                </fb:FilterGroupItem>
+                            </fb:filterGroupItems>
+                        </fb:FilterBar>
+                    <!-- <Table
+                        width="100%"
+                        items="{AvailData>/}"
+                        mode="MultiSelect"
+                    >
+                        <columns>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Part Number" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Part Name" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Drawing Number" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="REV No" />
+                            </Column>
+                            <Column
+                                hAlign="Center"
+                                width="10rem"
+                            >
+                                <Text text="Model" />
+                            </Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem vAlign="Middle">
+                                <cells>
+                                    <Input value="{AvailData>PartNumber}" />
+                                    <Input value="{AvailData>PartName}" />
+                                    <Input value="{AvailData>DrawingNo}" /> -->
+                                    <!-- <ComboBox
+                                        selectedKey="{excelData>Part Category}"
+                                    >
+                                        <items>
+                                            <core:Item
+                                                key="A"
+                                                text="Engine Components"
+                                            />
+                                            <core:Item
+                                                key="B"
+                                                text="Transmission Components"
+                                            />
+                                            <core:Item
+                                                key="C"
+                                                text="Electrical Components"
+                                            />
+                                        </items>
+                                    </ComboBox> -->
+                                    <!-- <Input value="{AvailData>RevNo}" /> -->
+                                    <!-- <ComboBox
+                                        selectedKey="{excelData>Part Family}"
+                                    >
+                                        <items>
+                                            <core:Item
+                                                key="A"
+                                                text="Engine Components"
+                                            />
+                                            <core:Item
+                                                key="B"
+                                                text="Transmission Components"
+                                            />
+                                            <core:Item
+                                                key="C"
+                                                text="Electrical Components"
+                                            />
+                                        </items>
+                                    </ComboBox> -->
+                                    <!-- <Input value="{AvailData>Model}" />
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table> -->
+                </f:content>
+            </f:DynamicPageHeader>
+        </f:header>
+        <f:content>
+            <HBox alignContent="Center" alignItems="Center">
+                <VBox>
+                    <tnt:NavigationList
+                            id="navigationList"
+                            width="320px"
+                            selectedKey="subItem3"
+                            
+                        >
+                        <tnt:NavigationListItem
+                                text="Section 1"
+                                key="rootItem1"
+                            >
+                            <tnt:NavigationListItem text="Dimentions" key="subItem3"/>
+                            <tnt:NavigationListItem
+                                    text="Appearance"
+                                    
+                                />
+                            <tnt:NavigationListItem text="Material" />
+                            <tnt:NavigationListItem text="Performance" />
+                            <tnt:NavigationListItem text="Regulatory" />
+                            </tnt:NavigationListItem>
+                    </tnt:NavigationList>
+                    <Button
+                            text="Upload"
+                            width="300px"
+                            press="onUploadSection1"
+                        />
+                </VBox>
+                <VBox>
+                    <tnt:NavigationList
+                          
+                            width="320px"
+                            selectedKey="subItem3"
+                        >
+                        <tnt:NavigationListItem
+                                text="Section 2"
+                                key="rootItem1"
+                            >
+                            <tnt:NavigationListItem
+                                    text="Dimension Photos"
+                                    key="subItem3"
+                                />
+                            <tnt:NavigationListItem text="BOM" />
+                            <tnt:NavigationListItem text="Regulatory Marking" />
+                            <tnt:NavigationListItem text="Traceability Details" />
+                            <tnt:NavigationListItem text="Additional Annexures" />
+                            </tnt:NavigationListItem>
+                    </tnt:NavigationList>
+                    <Button
+                            text="Upload"
+                            width="300px"
+                            press="onUploadSection2"
+                        />
+                </VBox>
+            </HBox>
+        </f:content>
+        <!-- DynamicPage Footer -->
+    </f:DynamicPage>
+</mvc:View>
