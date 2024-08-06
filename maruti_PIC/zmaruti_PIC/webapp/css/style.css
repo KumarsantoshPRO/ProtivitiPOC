@@ -1,0 +1,8 @@
+/* Enter your custom styles here */
+.customFooter {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+}

@@ -1,0 +1,213 @@
+
+<mvc:View
+		controllerName="com.zmaruti.controller.Viewpartlist"
+		height="100%"
+		xmlns:mvc="sap.ui.core.mvc"
+        xmlns:u="sap.ui.unified"
+
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m"
+		xmlns:f="sap.f"
+		xmlns:fb="sap.ui.comp.filterbar"
+		xmlns:svm="sap.ui.comp.smartvariants">
+		<f:DynamicPage  headerExpanded="true" fitContent="true" showFooter="true">
+		<f:title>
+<f:DynamicPageTitle>
+<f:heading>
+<Title text="Part list View Screen"/>
+</f:heading>
+</f:DynamicPageTitle>
+</f:title>
+			<f:header>
+				<f:DynamicPageHeader>
+					<f:content>
+					<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="Vendor Code - Name" label="Vendor Code - name" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+
+                                <fb:FilterGroupItem name="Department" label="Department" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+
+								<fb:FilterGroupItem name="Part Family" label="Part Family" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Part Code - Name" label="Part Code - Name" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										
+
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+
+                                <fb:FilterGroupItem name=" PIC User ID - name" label="User ID - name" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                 <fb:FilterGroupItem name="Part Category" label="Part Category" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                 <fb:FilterGroupItem name="Model" label="Model" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+			<f:content>
+			   <ScrollContainer  width="100%" vertical="true" focusable="true">
+        <Table width="100%" items="{excelData>/}">
+            <columns>
+                <!-- <Column hAlign="Center" width="5rem" >
+                    <Text text="Select" />
+                </Column> -->
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Part No" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Part Name" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Part Category" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Part Family" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Model" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Engine" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Vendor Code" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Vendor Name" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Department" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="PIC User Id - Name" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Section mgr user id - Name" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Other applicable Model/Engine" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Batch Code availability (Y/N)" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Edit" />
+                </Column>
+                
+            </columns>
+            <items>
+                <ColumnListItem vAlign="Middle">
+                    
+                    <cells>
+                        <!-- <CheckBox selected="{excelData>selected}" /> -->
+                         <Input value="{excelData>PartNo}" />
+                        <Input value="{excelData>PartName}" />
+                        <ComboBox selectedKey="{excelData>PartCategory}">
+                                    <items>
+                                        <core:Item key="A" text="A" />
+                                        <core:Item key="B" text="B" />
+                                        <core:Item key="C" text="C" />
+                                    </items>
+                                </ComboBox>
+                        <ComboBox selectedKey="{excelData>PartFamily}">
+                                    <items>
+                                        <core:Item key="Hose Pipe" text="Hose Pipe" />	
+                                        <core:Item key="Pipe Hose" text="Pipe Hose" />
+                                        <core:Item key="Pipe Brake" text="Pipe Brake" />
+                                        <core:Item key="Hose" text="Hose" />
+
+                                    </items>
+                                </ComboBox>
+                        <Input value="{excelData>Model}" />
+                        <Input value="{excelData>Engine}" />
+                        <Input value="{excelData>VendorCode}" />
+                        <Input value="{excelData>VendorName}" />
+                        <Input value="{excelData>Department}" />
+                        <Input value="{excelData>UserId}" />
+                        <Input value="{excelData>ManagerName}" />
+                        <Input value="{excelData>OtherEngine}" />
+                        <ComboBox selectedKey="{excelData>BatchAvailability}">
+                                    <items>
+                                        <core:Item key="Y" text="Yes" />
+                                        <core:Item key="N" text="No" />
+                                        
+                                       
+                                    </items>
+                                </ComboBox>
+                        <!-- <Input value="{excelData>Remarks}" /> -->
+						<Button icon="sap-icon://edit" tooltip="Edit"/>
+
+                        <!-- <Input value="{excelData>Remarks}" /> -->
+                        
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        </ScrollContainer>
+        						
+
+			</f:content>
+            <f:footer>
+            <OverflowToolbar>
+                                
+<ToolbarSpacer/>
+<Button type="Accept" text="Inquiry"/>
+<Button type="" icon="sap-icon://download" text="Download"/>
+
+        						</OverflowToolbar>
+                                </f:footer>
+		</f:DynamicPage>
+
+        <!-- </Page> -->
+</mvc:View>

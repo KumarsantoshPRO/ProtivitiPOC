@@ -136,7 +136,10 @@ sap.ui.define(
       handlePopoverPress: function (oEvent) {
         var oButton = oEvent.getSource(),
           oView = this.getView();
-
+        if (oButton.getParent().getAggregation("items")) {
+          this.sInputObject = oButton.getParent().getAggregation("items")[0];
+        } else {
+        }
         // create popover
         if (!this._pPopover) {
           this._pPopover = Fragment.load({

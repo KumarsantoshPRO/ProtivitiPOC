@@ -1,0 +1,253 @@
+<mvc:View
+		controllerName="com.zmarutipic.controller.ViewGrouping"
+		height="100%"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:core="sap.ui.core"
+		xmlns="sap.m"
+        
+		xmlns:f="sap.f"
+		xmlns:fb="sap.ui.comp.filterbar"
+		xmlns:svm="sap.ui.comp.smartvariants">
+       
+		<f:DynamicPage headerExpanded="{/headerExpanded}" fitContent="true" showFooter="true">
+		<f:title>
+<f:DynamicPageTitle>
+<f:heading>
+<Title text="Edit Part List"/>
+</f:heading>
+</f:DynamicPageTitle>
+</f:title>
+
+			<f:header>
+				<f:DynamicPageHeader>
+					<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterGroupItems>
+								<fb:FilterGroupItem name="Vendor Code - Name" label="Vendor Code - name" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<!-- <MultiComboBox
+											name="Name"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="{key}" text="{name}"/>
+										</MultiComboBox> -->
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+
+                                <fb:FilterGroupItem name="Department" label="Department" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<!-- <MultiComboBox
+											name="Name"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="{key}" text="{name}"/>
+										</MultiComboBox> -->
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+
+								<fb:FilterGroupItem name="Part Family" label="Part Family" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<!-- <MultiComboBox
+											name="Category"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: '/ProductCategories',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="{key}" text="{name}"/>
+										</MultiComboBox> -->
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Part Code - Name" label="Part Code - Name" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<!-- <MultiComboBox
+											name="SupplierName"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: '/ProductSuppliers',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="{key}" text="{name}"/>
+										</MultiComboBox> -->
+
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+
+                                <fb:FilterGroupItem name="User ID - name" label="User ID - name" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<!-- <MultiComboBox
+											name="Name"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="{key}" text="{name}"/>
+										</MultiComboBox> -->
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                 <fb:FilterGroupItem name="Part Category" label="Part Category" groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<!-- <MultiComboBox
+											name="Name"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="{key}" text="{name}"/>
+										</MultiComboBox> -->
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+                                 <fb:FilterGroupItem name="Control no." label="Control no." groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<!-- <MultiComboBox
+											name="Name"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="{key}" text="{name}"/>
+										</MultiComboBox> -->
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+								<fb:FilterGroupItem name="Status" label="Control no." groupName="Group1" visibleInFilterBar="true">
+									<fb:control>
+										<!-- <MultiComboBox
+											name="Name"
+											selectionChange=".onSelectionChange"
+											items="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="{key}" text="{name}"/>
+										</MultiComboBox> -->
+										<Input value="{
+												path: '/ProductNames',
+												templateShareable: true
+											}"/>
+									</fb:control>
+								</fb:FilterGroupItem>
+							</fb:filterGroupItems>
+						</fb:FilterBar>
+					<!-- </f:content> -->
+				</f:DynamicPageHeader>
+			</f:header>
+			<f:content>
+			   <ScrollContainer  width="100%" vertical="true" focusable="true">
+        <Table width="100%" items="{GroupingSelectionData1>/}">
+            <columns>
+                <Column hAlign="Center" width="10rem" >
+                    <Text text="Part Number" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Part Name" />
+                </Column>
+                 <Column hAlign="Center" width="10rem">
+                    <Text text="Drawing No" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Rev no." />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Model" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="ECN no" />
+                </Column>
+                <Column hAlign="Center" width="10rem">
+                    <Text text="Remarks" />
+                </Column>
+                
+                 <Column hAlign="Center" width="10rem">
+                    <Text text="Remove Part No" />
+                </Column>
+                 <Column hAlign="Center" width="10rem">
+                    <Text text="Reason for removing Part" />
+                </Column>
+                
+              
+                
+            </columns>
+            <items>
+                <ColumnListItem vAlign="Middle">
+                    
+                    <cells>
+                        <Input value="{GroupingSelectionData1>PartNumber}" />
+                        <Input value="{GroupingSelectionData1>PartName}" />
+                        <Input value="{GroupingSelectionData1>DrawingNo}" />
+                        <Input value="{GroupingSelectionData1>RevNo}" />
+                        <Input value="{GroupingSelectionData1>Model}" />
+                        <Input value="{GroupingSelectionData1>ECNNo}" />
+                        <Input value="{GroupingSelectionData1>Remarks}" />
+						<CheckBox selected="{GroupingSelectionData1>selected}"/>
+                        <!-- <Button icon="sap-icon://document" press="onViewPartList" /> -->
+                        
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>
+        </ScrollContainer>
+			</f:content>
+          
+         <f:footer>
+            <OverflowToolbar>
+<Button type="Emphasized" text="Back" press="onNavBack"/>
+                 
+<ToolbarSpacer/>
+<Button type="" text="Add new Part Number" icon="sap-icon://add"/>
+
+<Button type="Accept" text="Save" icon="sap-icon://save"/>
+
+<Button type="" text="Download" icon="sap-icon://download"/>
+
+
+        						</OverflowToolbar>
+                                </f:footer>
+
+		</f:DynamicPage>
+        
+       
+</mvc:View>

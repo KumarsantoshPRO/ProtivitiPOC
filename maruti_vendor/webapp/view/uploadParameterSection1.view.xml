@@ -208,9 +208,9 @@
                                             />
                                         </items>
                                     </ComboBox> -->
-                                    <HBox >
+                                    <HBox id="idHB">
                                     <Input liveChange="onCriteriaChange" value="{bAvailData>Criteria}" />
-                                    <Button id="myPopover" visible="false" press="handlePopoverPress" text="⊥⌭" type="Transparent"></Button>
+                                    <Button id="myPopover" class="sapUiNoMarginBegin sapUiNoMarginEnd" press="handlePopoverPress" text="!" type="Transparent"></Button>
                                     </HBox>
                                     <!-- <ComboBox
                                         selectedKey="{excelData>Part Family}"

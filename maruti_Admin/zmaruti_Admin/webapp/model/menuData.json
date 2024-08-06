@@ -1,0 +1,34 @@
+{
+	"selectedKey": "page2",
+	"navigation": [
+		
+		{
+            "title": "Create Part Master",
+			"icon": "sap-icon://create",
+			"expanded": false,
+			"key": "createpartmaster",
+			"items": [
+				{
+					"title": "Upload Part List",
+					"key": "uploadpartlist"
+				
+					
+				},
+				{
+					"title": "View Part List",
+					"key": "viewpartlist"
+					
+				}
+				
+				
+			]
+		
+		}
+
+		
+	
+	],
+	"fixedNavigation": [
+		
+	]
+}

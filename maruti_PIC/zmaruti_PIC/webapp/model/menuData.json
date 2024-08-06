@@ -1,0 +1,33 @@
+{
+	"selectedKey": "page2",
+	"navigation": [
+		
+
+		{
+			"title": "Grouping",
+			"icon": "sap-icon://collections-management",
+			"expanded": false,
+			"key": "grouping",
+			"items": [
+				{
+					"title": "Select Parts",
+					"key": "selectparts"
+				
+					
+				},
+				{
+					"title": "View Grouping",
+					"key": "viewgrouping"
+					
+				}
+				
+				
+			]
+		}
+		
+	
+	],
+	"fixedNavigation": [
+		
+	]
+}

@@ -5,7 +5,7 @@
 		id="myPopover1"
 		title="List of symbols"
 		class="sapUiResponsivePadding--header sapUiResponsivePadding--footer"
-		placement="Left"
+		placement="Top" 
 		initialFocus="idBtn">
         <VBox >
             <HBox >
@@ -27,7 +27,7 @@
                 <Button class="sapUiTinyMarginEnd" text="∥" type="Attention" press="onButtonPress"/>
             </HBox>
              <HBox >
-                <Button class="sapUiTinyMarginBeginEnd" text="∘" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginBeginEnd" text="θ" type="Attention" press="onButtonPress"/>
                 <Button class="sapUiTinyMarginEnd" text="◎" type="Attention" press="onButtonPress"/>
                 <Button class="sapUiTinyMarginEnd" text="⌯" type="Attention" press="onButtonPress"/>
                 <Button  class="sapUiTinyMarginEnd" text="∥" type="Attention" press="onButtonPress"/>
@@ -35,6 +35,9 @@
             <HBox >
                 <Button class="sapUiTinyMarginBeginEnd"  text="↗" type="Attention" press="onButtonPress"/>
                 <Button class="sapUiTinyMarginEnd" text="↖" type="Attention" press="onButtonPress"/>
+                  <Button class="sapUiTinyMarginEnd" text="π" type="Attention" press="onButtonPress"/>
+                <Button class="sapUiTinyMarginEnd" text="±" type="Attention" press="onButtonPress"/>
+                
              
             </HBox>
         </VBox>
