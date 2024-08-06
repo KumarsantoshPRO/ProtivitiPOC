@@ -1,0 +1,225 @@
+{
+  "_version": "1.58.0",
+  "sap.app": {
+    "id": "misp.maruti",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.11.3",
+      "toolsId": "a458792a-9290-4d84-9f2d-e4be1060f0dc"
+    },
+    "dataSources": {
+      "menuData_alias": {
+        "uri": "model/menuData.json",
+        "type": "JSON"
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.125.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "misp.maruti.i18n.i18n"
+        }
+      },
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "menuData_alias"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "misp.maruti.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteMain",
+          "pattern": ":?query:",
+          "target": [
+            "TargetMain"
+          ]
+        },
+        {
+          "name": "Home",
+          "pattern": "Home",
+          "target": [
+            "Home"
+          ]
+        },
+        {
+          "name": "Upload",
+          "pattern": "Upload",
+          "target": [
+            "Upload"
+          ]
+        },
+        {
+          "name": "viewPartList",
+          "pattern": "viewPartList",
+          "target": [
+            "viewPartList"
+          ]
+        },
+        {
+          "name": "uploadParameter",
+          "pattern": "uploadParameter",
+          "target": [
+            "uploadParameter"
+          ]
+        },
+        
+        {
+          "name": "uploadParameterSection1",
+          "pattern": "uploadParameterSection1",
+          "target": [
+            "uploadParameterSection1"
+          ]
+        },
+        {
+          "name": "uploadParameterSection2",
+          "pattern": "uploadParameterSection2",
+          "target": [
+            "uploadParameterSection2"
+          ]
+        },
+        
+        
+        {
+          "name": "View",
+          "pattern": "View",
+          "target": [
+            "View"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetMain": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Main",
+          "viewName": "Main"
+        },
+        "Home": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Home",
+          "viewName": "Home",
+          "viewPath": "misp.maruti.view.Home"
+        },
+        "Upload": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Upload",
+          "viewName": "Upload",
+          "viewPath": "misp.maruti.view.PartMaster"
+        },
+        "View": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View",
+          "viewName": "View",
+          "viewPath": "misp.maruti.view.PartMaster"
+        },
+        "viewPartList": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "viewPartList",
+          "viewName": "viewPartList",
+          "viewPath": "misp.maruti.view"
+        },
+        "uploadParameter": {
+          "viewType": "XML",
+          "transition": "fade",
+          "clearControlAggregation": false,
+          "viewId": "uploadParameter",
+          "viewName": "uploadParameter",
+          "viewPath": "misp.maruti.view"
+        }
+        ,
+        "uploadParameterSection1": {
+          "viewType": "XML",
+          "transition": "fade",
+          "clearControlAggregation": false,
+          "viewId": "uploadParameterSection1",
+          "viewName": "uploadParameterSection1",
+          "viewPath": "misp.maruti.view"
+        }
+        ,
+        "uploadParameterSection2": {
+          "viewType": "XML",
+          "transition": "fade",
+          "clearControlAggregation": false,
+          "viewId": "uploadParameterSection2",
+          "viewName": "uploadParameterSection2",
+          "viewPath": "misp.maruti.view"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "misp.maruti.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

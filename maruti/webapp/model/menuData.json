@@ -1,0 +1,34 @@
+{
+	"selectedKey": "page2",
+	"navigation": [
+		{
+			"title": "Home",
+			"icon": "sap-icon://home",
+			"expanded": true,
+			"key": "Home",
+			"visible": "false"
+		},
+		{
+			"title": "Vendor",
+			"icon": "sap-icon://create",
+			"expanded": false,
+			"key": "Create",
+			"items": [
+				{
+					"title": "View Requests",
+					"key": "Upload"
+				},
+				{
+					"title": "View MIS-P",
+					"key": "View"
+				}
+			]
+		}
+	],
+	"fixedNavigation": [
+		{
+			"title": "Home",
+			"icon": "sap-icon://home"
+		}
+	]
+}
